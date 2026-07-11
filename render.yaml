@@ -1,15 +1,12 @@
 services:
   - type: web
     name: coding-mentor-backend
-    env: java
+    env: docker
     plan: free
-    buildCommand: cd coding-mentor-backend && mvn -DskipTests package
-    startCommand: cd coding-mentor-backend && java -jar target/*.jar
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: PORT
-        value: 10000
-      - key: JAVA_VERSION
-        value: 17
+        value: 8080
       - key: JWT_SECRET
         value: render-secret-change-me
       - key: GEMINI_API_KEY
