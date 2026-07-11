@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: coding-mentor-backend
+    env: java
+    plan: free
+    buildCommand: cd coding-mentor-backend && mvn -DskipTests package
+    startCommand: cd coding-mentor-backend && java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: JAVA_VERSION
+        value: 17
+      - key: JWT_SECRET
+        value: render-secret-change-me
+      - key: GEMINI_API_KEY
+        value: your_gemini_key
+      - key: FRONTEND_ORIGIN
+        value: https://your-frontend.onrender.com
