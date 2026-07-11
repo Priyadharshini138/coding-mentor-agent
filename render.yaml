@@ -16,3 +16,10 @@ services:
         value: your_gemini_key
       - key: FRONTEND_ORIGIN
         value: https://your-frontend.onrender.com
+
+  - type: static
+    name: coding-mentor-frontend
+    plan: free
+    rootDirectory: coding-mentor-frontend
+    buildCommand: npm install && npm run build
+    publishDirectory: dist
